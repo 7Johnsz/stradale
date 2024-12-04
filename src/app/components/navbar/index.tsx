@@ -1,33 +1,47 @@
+"use client"
+
 import Logo from "@/public/logo.png"
 import Image from "next/image";
-import Link from "next/link";
+
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 export default function Navbar() {
-    return (
-      <header className="flex items-center justify-between p-4 md:p-4 !px-8">
-        <div className="flex items-center gap-2">
-          <div className="font-bold text-2xl">
-            <Image
-              src={Logo}
-              alt="Stadale Logo"
-              width={40}
-            />
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-black bg-opacity-80' : 'bg-transparent'
+    }`}
+    >
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          <Image
+            src={Logo}
+            alt="Stadale Logo"
+            width={40}
+          />
+          <div className="hidden md:flex space-x-4 text-sm">
+            <Link href="#" className="text-white hover:text-gray-300">Home</Link>
+            <Link href="#" className="text-white hover:text-gray-300">Services</Link>
+            <Link href="#" className="text-white hover:text-gray-300">About</Link>
+            <Link href="#" className="text-white hover:text-gray-300">Contact</Link>
           </div>
         </div>
-        <nav className="hidden md:flex items-center gap-6">
-          <Link className="text-sm hover:text-gray-300" href="#">
-            Inicio
-          </Link>
-          <Link className="text-sm hover:text-gray-300" href="#">
-            Sobre nós
-          </Link>
-          <Link className="text-sm hover:text-gray-300" href="#">
-            Stradale Experience
-          </Link>
-          <Link className="text-sm hover:text-gray-300" href="#">
-            Contato
-          </Link>
-        </nav>
-      </header>
-    )
+      </div>
+    </nav>
+  )
 }
