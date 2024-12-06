@@ -17,6 +17,15 @@ import Stradale from "@/public/stradale1.webp"
 import Stradale2 from "@/public/stradale2.webp"
 
 export default function Page() {
+  if (typeof window !== "undefined") {
+    const videoElement = document.getElementById("background-video") as HTMLVideoElement;
+    if (videoElement) {
+      videoElement.play().catch((error) => {
+        console.error("Erro ao tentar reproduzir o vídeo:", error);
+      });
+    }
+  }
+  
   return (
     <div className="min-h-screen bg-black text-white tracking-[-0.028rem]">
       <main className="pt-16 px-4 md:px-14">
@@ -26,13 +35,14 @@ export default function Page() {
         <section className="relative h-[50vh] md:h-screen w-full overflow-hidden" id="home">
           <div className="relative h-full w-full overflow-hidden vignette-container">
             <video
+              id="background-video"
               className="absolute top-0 left-0 w-full h-full object-cover rounded"
               autoPlay
               loop
               muted
               playsInline
             >
-              <source src="/videos/202412041944.mp4" type="video/mp4" />
+              <source src="https://github.com/7Johnsz/stradale/raw/refs/heads/main/public/videos/202412041944.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-between py-10 md:py-20">
               <div className="z-10 flex items-center justify-center">
@@ -98,6 +108,7 @@ export default function Page() {
                     layout="fill"
                     alt="Stradale"
                     className="rounded-lg shadow-lg object-cover"
+                    unoptimized
                   />
                 </div>
                 <div className="flex items-center gap-3 justify-center pt-8 text-center">
@@ -116,6 +127,7 @@ export default function Page() {
                     layout="fill"
                     alt="Stradale"
                     className="rounded-lg shadow-lg object-cover"
+                    unoptimized
                   />
                 </div>
                 <div className="flex items-center gap-3 justify-center pt-8 text-center">
@@ -139,6 +151,7 @@ export default function Page() {
               className="object-cover rounded-lg shadow-lg w-full md:w-1/2"
               width={500}
               height={500}
+              unoptimized
             />
             <div className="flex flex-col gap-6 w-full md:w-1/2 text-center md:text-left">
               <h1 className="text-3xl md:text-4xl font-bold">
@@ -211,16 +224,19 @@ export default function Page() {
             <Image
               src="https://stradale.com.br/wp-content/themes/stradale/img/gpr1.webp"
               alt="Stradale Experience"
-              className="object-cover rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg"
               width={100}
               height={100}
+              unoptimized
             />
             <Image
               src="https://stradale.com.br/wp-content/themes/stradale/img/gpe2.webp"
               alt="Stradale Experience"
-              className="object-cover rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg"
               width={100}
               height={100}
+              style={{ objectFit: 'cover' }}
+              unoptimized
             />
           </div>
           <div className="flex flex-col items-center">
