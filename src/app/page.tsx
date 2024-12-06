@@ -13,8 +13,8 @@ import Footer from "@/src/app/components/footer"
 import AnimatedShinyText from "@/src/app/components/ui/animated-shiny-text"
 import { cn } from "@/src/lib/utils"
 
-import Stradale from "@/public/stradale1.webp"
-import Stradale2 from "@/public/stradale2.webp"
+// import Stradale from "@/public/stradale1.webp"
+// import Stradale2 from "@/public/stradale2.webp"
 
 export default function Page() {
   if (typeof window !== "undefined") {
@@ -104,7 +104,7 @@ export default function Page() {
                 <h1 className="text-2xl md:text-3xl font-bold pb-8 text-center">Stradale - F1</h1>
                 <div className="w-full md:w-[600px] h-[300px] md:h-[400px] relative">
                   <Image
-                    src={Stradale}
+                    src="https://raw.githubusercontent.com/7Johnsz/stradale/refs/heads/main/public/stradale1.webp"
                     layout="fill"
                     alt="Stradale"
                     className="rounded-lg shadow-lg object-cover"
@@ -123,7 +123,7 @@ export default function Page() {
                 <h1 className="text-2xl md:text-3xl font-bold pb-8 text-center">Stradale - F2</h1>
                 <div className="w-full md:w-[600px] h-[300px] md:h-[400px] relative">
                   <Image
-                    src={Stradale2}
+                    src="https://raw.githubusercontent.com/7Johnsz/stradale/refs/heads/main/public/stradale2.webp"
                     layout="fill"
                     alt="Stradale"
                     className="rounded-lg shadow-lg object-cover"
