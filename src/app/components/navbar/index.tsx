@@ -3,6 +3,7 @@
 import Logo from "@/public/logo.png"
 import Image from "next/image";
 import { useState, useEffect } from 'react'
+
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll'
 import { Menu, X } from 'lucide-react'
 
