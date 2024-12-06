@@ -104,7 +104,7 @@ function LogoScroll({
                   alt={logo.alt}
                   width={250}
                   height={120}
-                  objectFit="contain"
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
             ))}
