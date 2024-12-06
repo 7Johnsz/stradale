@@ -12,7 +12,8 @@ import {
   useVelocity,
 } from "framer-motion";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
+import logos from "@/src/app/data/partners.json"; // Import the JSON file
 
 interface PartnerLogo {
   src: string;
@@ -20,7 +21,6 @@ interface PartnerLogo {
 }
 
 interface PartnerLogosScrollProps {
-  logos: PartnerLogo[];
   baseVelocity?: number;
   className?: string;
 }
@@ -31,7 +31,6 @@ const wrap = (min: number, max: number, v: number) => {
 };
 
 function LogoScroll({
-  logos,
   baseVelocity = 100,
   className,
 }: PartnerLogosScrollProps) {
@@ -65,7 +64,7 @@ function LogoScroll({
 
     window.addEventListener("resize", calculateRepetitions);
     return () => window.removeEventListener("resize", calculateRepetitions);
-  }, [logos]);
+  }, []); // Removed `logos` as a dependency
 
   const x = useTransform(baseX, (v) => `${wrap(-100, 0, v)}%`);
 
@@ -85,12 +84,19 @@ function LogoScroll({
   });
 
   return (
-    <div className="w-full overflow-hidden whitespace-nowrap relative" ref={containerRef}>
+    <div
+      className="w-full overflow-hidden whitespace-nowrap relative"
+      ref={containerRef}
+    >
       <div className="absolute left-0 top-0 w-16 h-full bg-gradient-to-r from-black to-transparent z-10" />
       <div className="absolute right-0 top-0 w-16 h-full bg-gradient-to-l from-black to-transparent z-10" />
       <motion.div className={cn("inline-block", className)} style={{ x }}>
         {Array.from({ length: repetitions }).map((_, i) => (
-          <div key={i} className="inline-flex items-center" ref={i === 0 ? logosRef : null}>
+          <div
+            key={i}
+            className="inline-flex items-center"
+            ref={i === 0 ? logosRef : null}
+          >
             {logos.map((logo, index) => (
               <div key={index} className="inline-block mx-6">
                 <Image
@@ -110,14 +116,12 @@ function LogoScroll({
 }
 
 export default function PartnerLogosScroll({
-  logos,
   baseVelocity = 5,
   className,
 }: PartnerLogosScrollProps) {
   return (
     <section className="relative w-full py-5 bg-gradient-to-r from-transparent via-black to-transparent">
-      <LogoScroll logos={logos} baseVelocity={baseVelocity} className={className} />
+      <LogoScroll baseVelocity={baseVelocity} className={className} />
     </section>
   );
 }
-
