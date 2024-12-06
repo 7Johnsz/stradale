@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['stradale.com.br'],
+    domains: ['stradale.com.br', 'lh3.googleusercontent.com'],
   },
 };
 
