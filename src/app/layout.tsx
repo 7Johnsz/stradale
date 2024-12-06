@@ -22,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} font-sans antialiased`}>
       <body>
-        <SmoothScroll>
+        {/* <SmoothScroll> */}
           {children}
-        </SmoothScroll>
+        {/* </SmoothScroll> */}
       </body>
     </html>
   );

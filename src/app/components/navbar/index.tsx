@@ -48,10 +48,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <button onClick={scrollToTop}>
             <Image
-              src={Logo}
+              src="https://raw.githubusercontent.com/7Johnsz/stradale/refs/heads/main/public/logo.png"
               alt="Stadale Logo"
               width={40}
               height={40}
+              style={{ width: 'auto', height: 'auto' }} 
             />
           </button>
           <div className="hidden md:flex space-x-4 text-sm">

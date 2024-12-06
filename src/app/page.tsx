@@ -42,7 +42,7 @@ export default function Page() {
               muted
               playsInline
             >
-              <source src="https://github.com/7Johnsz/stradale/raw/refs/heads/main/public/videos/202412041944.mp4" type="video/mp4" />
+              <source src="/videos/background.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-between py-10 md:py-20">
               <div className="z-10 flex items-center justify-center">
@@ -105,10 +105,10 @@ export default function Page() {
                 <div className="w-full md:w-[600px] h-[300px] md:h-[400px] relative">
                   <Image
                     src="https://raw.githubusercontent.com/7Johnsz/stradale/refs/heads/main/public/stradale1.webp"
-                    layout="fill"
                     alt="Stradale"
                     className="rounded-lg shadow-lg object-cover"
                     unoptimized
+                    fill
                   />
                 </div>
                 <div className="flex items-center gap-3 justify-center pt-8 text-center">
@@ -124,10 +124,10 @@ export default function Page() {
                 <div className="w-full md:w-[600px] h-[300px] md:h-[400px] relative">
                   <Image
                     src="https://raw.githubusercontent.com/7Johnsz/stradale/refs/heads/main/public/stradale2.webp"
-                    layout="fill"
                     alt="Stradale"
                     className="rounded-lg shadow-lg object-cover"
                     unoptimized
+                    fill
                   />
                 </div>
                 <div className="flex items-center gap-3 justify-center pt-8 text-center">
@@ -192,13 +192,6 @@ export default function Page() {
           <div className="relative w-full max-w-[600px]">
             <HeroVideoDialog
               className="dark:hidden block"
-              animationStyle="from-center"
-              videoSrc="https://www.youtube.com/embed/kTXyx094ThE"
-              thumbnailSrc="https://img.youtube.com/vi/kTXyx094ThE/0.jpg"
-              thumbnailAlt="Hero Video"
-            />
-            <HeroVideoDialog
-              className="hidden dark:block"
               animationStyle="from-center"
               videoSrc="https://www.youtube.com/embed/kTXyx094ThE"
               thumbnailSrc="https://img.youtube.com/vi/kTXyx094ThE/0.jpg"
