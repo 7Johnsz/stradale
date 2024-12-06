@@ -8,4 +8,3 @@ declare module 'react-scroll' {
     export const scrollMore: any;
     export const scroll: any;
   }
-  

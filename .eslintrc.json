@@ -1,24 +1,23 @@
 {
   "extends": [
-    "next/core-web-vitals", "next/typescript",
+    "next/core-web-vitals",
+    "next/typescript",
     "airbnb",
     "airbnb-typescript",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "@typescript-eslint/recommended",  
+    "eslint:recommended"
   ],
-  "env": {
-    "browser": true,
-    "node": true,
-    "es2021": true
-  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 12,
-    "sourceType": "module",
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "./",
+    "ecmaVersion": 2020,
+    "sourceType": "module"
   },
+  "plugins": ["@typescript-eslint", "react"],
   "rules": {
-    "react/react-in-jsx-scope": "off"
+    "@typescript-eslint/dot-notation": "error",
+    "react/prop-types": "off"
   }
 }
-
-
