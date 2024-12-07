@@ -195,7 +195,7 @@ export default function Page() {
               className="dark:hidden block"
               animationStyle="from-center"
               videoSrc="https://www.youtube.com/embed/kTXyx094ThE"
-              thumbnailSrc="https://img.youtube.com/vi/kTXyx094ThE/0.jpg"
+              thumbnailSrc="/thumb.jpg"
               thumbnailAlt="Hero Video"
             />
           </div>
