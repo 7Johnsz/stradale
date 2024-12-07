@@ -32,6 +32,7 @@ export default function Page() {
         <div className="mb-5">
           <Navbar />
         </div>
+
         <section className="relative h-[50vh] md:h-screen w-full overflow-hidden" id="home">
           <div className="relative h-full w-full overflow-hidden vignette-container">
             <video
@@ -99,10 +100,10 @@ export default function Page() {
               <p className="text-gray-400 w-full md:w-2/3 lg:w-1/2 text-center pt-4">Ser referência nas soluções para manutenção e preparação automotiva para o Segmento Premium no Brasil.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 justify-center pt-[4rem]">
+            <div className="flex flex-wrap gap-16 justify-center pt-[4rem]">
               <div className="flex flex-col justify-center items-center">
                 <h1 className="text-2xl md:text-3xl font-bold pb-8 text-center">Stradale - F1</h1>
-                <div className="w-full md:w-[600px] h-[300px] md:h-[400px] relative">
+                <div className="w-full md:w-[450px] h-[300px] md:h-[400px] relative">
                   <Image
                     src="https://raw.githubusercontent.com/7Johnsz/stradale/refs/heads/main/public/stradale1.webp"
                     alt="Stradale"
@@ -121,7 +122,7 @@ export default function Page() {
 
               <div className="flex flex-col justify-center items-center">
                 <h1 className="text-2xl md:text-3xl font-bold pb-8 text-center">Stradale - F2</h1>
-                <div className="w-full md:w-[600px] h-[300px] md:h-[400px] relative">
+                <div className="w-full md:w-[450px] h-[300px] md:h-[400px] relative">
                   <Image
                     src="https://raw.githubusercontent.com/7Johnsz/stradale/refs/heads/main/public/stradale2.webp"
                     alt="Stradale"
